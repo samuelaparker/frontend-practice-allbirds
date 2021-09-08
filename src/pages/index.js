@@ -8,9 +8,18 @@ import Nav from "../components/Nav"
 const IndexPage = () =>{
   
     return (
+      <Wrapper>
      <Nav />
+     </Wrapper>
     )
   
 }
 
 export default IndexPage
+
+
+const Wrapper = styled.body`
+  margin: 0;
+  padding: 0;
+  background: grey;
+`
