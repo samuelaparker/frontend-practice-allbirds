@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'gatsby'
 import Logo from '../../assets/allbirdsLogo.inline.svg'
 import User from '../../assets/user.inline.svg'
 import Help from '../../assets/help.inline.svg'
 import Cart from '../../assets/cart.inline.svg'
 import styled from 'styled-components'
+
 
 const Nav = () => {
 
@@ -11,17 +13,17 @@ const Nav = () => {
         
         <NavDesktopWrapper>
             <NavDesktopListLeft>
-                <StyledLink>MEN</StyledLink>
-                <StyledLink>WOMAN</StyledLink>
-                <StyledLink>NEW ARRIVALS</StyledLink>
+                <StyledLink to="" >MEN</StyledLink>
+                <StyledLink to="">WOMAN</StyledLink>
+                <StyledLink to="">NEW ARRIVALS</StyledLink>
             </NavDesktopListLeft>
             <StyledLogo />
             <NavDesktopListRight>
-                <StyledLink>SUSTAINABILITY</StyledLink>
-                <StyledLink>STORES</StyledLink>
-                <StyledUser />
-                <StyledHelp />
-                <StyledCart />    
+                <StyledLink to="">SUSTAINABILITY</StyledLink>
+                <StyledLink to="">STORES</StyledLink>
+                <StyledUser to=""/>
+                <StyledHelp to=""/>
+                <StyledCart to=""/>    
             </NavDesktopListRight>
         </NavDesktopWrapper>
         
@@ -50,12 +52,20 @@ const NavDesktopListRight = styled.div`
 const StyledLogo = styled(Logo)`
     width: 9em;
 `
-const StyledLink = styled.a`
+const StyledLink = styled(props => <Link {...props} />)`
+    padding-right: 2rem;
+    font-family: sans-serif;
     text-decoration: none;
-    padding: 0.5em;
-`
-const StyledUser = styled(User)`
+    color: black;
+    
+    &:hover {
+    color: rgb(92, 92, 92);
+}
+`;
+const StyledUser = styled.div`
     width: 1.5em;
+    height: 1.5em;
+    background-image: url(${User});
 `
 const StyledHelp = styled(Help)`
     width: 1.5em;
@@ -63,3 +73,4 @@ const StyledHelp = styled(Help)`
 const StyledCart = styled(Cart)`
     width: 1.5em;
 `
+
