@@ -8,18 +8,13 @@ import Nav from "../components/Nav"
 const IndexPage = () =>{
   
     return (
-      <Wrapper>
+      <React.Fragment>
+      <GlobalStyle />
      <Nav />
-     </Wrapper>
+     </React.Fragment>
     )
   
 }
 
 export default IndexPage
 
-
-const Wrapper = styled.body`
-  margin: 0;
-  padding: 0;
-  background: grey;
-`
