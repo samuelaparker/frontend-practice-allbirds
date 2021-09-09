@@ -5,12 +5,13 @@ import User from '../../assets/user.inline.svg'
 import Help from '../../assets/help.inline.svg'
 import Cart from '../../assets/cart.inline.svg'
 import styled from 'styled-components'
+import { GrCart } from "react-icons/gr";
 
 
 const Nav = () => {
 
     return (
-        
+
         <NavDesktopWrapper>
             <NavDesktopListLeft>
                 <StyledLink to="" >MEN</StyledLink>
@@ -21,12 +22,12 @@ const Nav = () => {
             <NavDesktopListRight>
                 <StyledLink to="">SUSTAINABILITY</StyledLink>
                 <StyledLink to="">STORES</StyledLink>
-                <StyledUser to=""/>
-                <StyledHelp to=""/>
-                <StyledCart to=""/>    
+                <StyledUser href=""><User /></StyledUser>
+                <StyledHelp href=""><Help /></StyledHelp>
+                <StyledCart href=""><Cart /></StyledCart>
             </NavDesktopListRight>
         </NavDesktopWrapper>
-        
+
     )
 }
 
@@ -35,6 +36,7 @@ export default Nav;
 const NavDesktopWrapper = styled.div`
     display: flex;
     justify-content: space-between;
+    padding: 0.5rem 1rem;
     min-height: 5em;
     box-shadow: rgb(0 0 0 / 9%) 0px 2px 24px 0px;
 `
@@ -62,15 +64,34 @@ const StyledLink = styled(props => <Link {...props} />)`
     color: rgb(92, 92, 92);
 }
 `;
-const StyledUser = styled.div`
+
+
+const StyledUser = styled.a`
+    width: 1.2em;
+    height: 1.2em;
+    margin: 1em;
+    &:hover {
+    fill: rgb(92, 92, 92);
+    }
+`
+const StyledHelp = styled.a`
     width: 1.5em;
     height: 1.5em;
-    background-image: url(${User});
+    margin: 1em;
+    &:hover {
+    fill: rgb(92, 92, 92);
+    }
 `
-const StyledHelp = styled(Help)`
+const StyledCart = styled.a`
     width: 1.5em;
+    height: 1.5em;
+    stroke: black;
+    margin: 1em;
+   
+    &:hover {
+    stroke: rgb(92, 92, 92);  
+    }
 `
-const StyledCart = styled(Cart)`
-    width: 1.5em;
-`
+
+
 
