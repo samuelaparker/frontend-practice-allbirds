@@ -5,7 +5,7 @@ import User from '../../assets/user.inline.svg'
 import Help from '../../assets/help.inline.svg'
 import Cart from '../../assets/cart.inline.svg'
 import styled from 'styled-components'
-import { GrCart } from "react-icons/gr";
+
 
 
 const Nav = () => {
@@ -56,9 +56,9 @@ const StyledLogo = styled(Logo)`
 `
 const StyledLink = styled(props => <Link {...props} />)`
     padding-right: 2rem;
-    font-family: sans-serif;
     text-decoration: none;
     color: black;
+    font-family: HurmeGeometricSansLightOblique;
     
     &:hover {
     color: rgb(92, 92, 92);

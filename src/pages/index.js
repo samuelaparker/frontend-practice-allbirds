@@ -6,12 +6,15 @@ import GlobalStyle from "../assets/GlobalStyles"
 
 
 
+
+
 const IndexPage = () =>{
   
     return (
       <React.Fragment>
       <GlobalStyle />
       <Nav />
+      <div>test</div>
      </React.Fragment>
     )
   
