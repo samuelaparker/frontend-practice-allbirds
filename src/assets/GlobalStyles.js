@@ -3,10 +3,6 @@ import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
 
-@font-face {
-    font-family: 'goodtimes';
-    src: url('../fonts/PlayfairDisplay-Italic.ttf') format('truetype'),
-}
 
   *, *::before, *::after {
     box-sizing: border-box;
@@ -17,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     height: 100vh;
-    font-family: 'goodtimes';
+    font-family: 'Hurme Geometric Sans';
     
     
   }
@@ -27,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
 
   div {
     font-weight: 400;
-    font-family: 'goodtimes';
+    font-family: 'Hurme Geometric Sans';
   }
 `
 
