@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby'
+import { useState } from 'react';
 import Logo from '../../assets/allbirdsLogo.inline.svg'
 import User from '../../assets/user.inline.svg'
 import Help from '../../assets/help.inline.svg'
@@ -58,10 +59,12 @@ const StyledLink = styled(props => <Link {...props} />)`
     padding-right: 2rem;
     text-decoration: none;
     color: black;
-    font-family: HurmeGeometricSansLightOblique;
+    font-family: 'Hurme Geometric Sans Bold';
+    font-size: 12px;
+    
     
     &:hover {
-    color: rgb(92, 92, 92);
+    text-decoration: underline;
 }
 `;
 
