@@ -20,19 +20,18 @@ const Nav = () => {
                 <middle />
                 <bottom />
             </Hamburger>
-
             <NavDesktopListLeft isOpen={isOpen}>
-                <StyledLink to="" >MEN</StyledLink>
-                <StyledLink to="">WOMAN</StyledLink>
-                <StyledLink to="">NEW ARRIVALS</StyledLink>
+                <StyledLink to="" isOpen={isOpen}>MEN</StyledLink>
+                <StyledLink to="" isOpen={isOpen}>WOMAN</StyledLink>
+                <StyledLink to="" isOpen={isOpen}>NEW ARRIVALS</StyledLink>
             </NavDesktopListLeft>
-            <StyledLogo />
+            <StyledLogo isOpen={isOpen}/>
             <NavDesktopListRight isOpen={isOpen}>
-                <StyledLink to="">SUSTAINABILITY</StyledLink>
-                <StyledLink to="">STORES</StyledLink>
-                <StyledUser href=""><User /></StyledUser>
-                <StyledHelp href=""><Help /></StyledHelp>
-                <StyledCart href=""><Cart /></StyledCart>
+                <StyledLink to="" isOpen={isOpen}>SUSTAINABILITY</StyledLink>
+                <StyledLink to="" isOpen={isOpen}>STORES</StyledLink>
+                <StyledUser href="" isOpen={isOpen}><User /></StyledUser>
+                <StyledHelp href="" isOpen={isOpen}><Help /></StyledHelp>
+                <StyledCart href="" isOpen={isOpen}><Cart /></StyledCart>
             </NavDesktopListRight>
         </NavDesktopWrapper>
 
@@ -42,11 +41,8 @@ const Nav = () => {
 export default Nav;
 
 const Hamburger = styled.div`
-
-    
 position: ${({ isOpen }) => (isOpen ? "block" : "absolute")};
-  
-  left: 2rem;
+  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -55,13 +51,10 @@ position: ${({ isOpen }) => (isOpen ? "block" : "absolute")};
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0;
+  padding: 0 0 0 2rem;
   z-index: 10;
   
   @media (max-width: 768px) {
-    
-    /* display: flex; */
-
   
   top, middle, bottom {
     background: black;
@@ -71,8 +64,7 @@ position: ${({ isOpen }) => (isOpen ? "block" : "absolute")};
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 4px;
-    
-  }
+    }
   }
 
   middle {
@@ -82,32 +74,26 @@ position: ${({ isOpen }) => (isOpen ? "block" : "absolute")};
 
   top {
     transform: ${({ isOpen }) => (isOpen ? 'rotate(45deg)' : 'rotate(0)')};
-  
   }
 
   bottom {
-   
     transform: ${({ isOpen }) => (isOpen ? 'rotate(-45deg)' : 'rotate(0)')};
   }
-
-  
 `;
 
 const NavDesktopWrapper = styled.div`
     display: flex;
     justify-content: space-between;
 
-    padding: 0.5rem 1rem;
+    padding: 0 0 0 2rem;
     min-height: 5em;
     box-shadow: rgb(0 0 0 / 9%) 0px 2px 24px 0px;
     
-
     @media (max-width: 768px) {
     overflow: hidden;
     transition: max-height 0.3s ease-in;
     width: 100%;
     flex-direction: ${({ isOpen }) => (isOpen ? "column" : "none")};
-    /* height: ${({ isOpen }) => (isOpen ? "100vh" : "")}; */
     align-items: ${({ isOpen }) => (isOpen ? "right" : "center")};
     
   }
@@ -132,17 +118,17 @@ const NavDesktopListRight = styled.div`
         display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
         align-items: ${({ isOpen }) => (isOpen ? "stretch" : "center")};
               
-
 }
 `
 
 const StyledLogo = styled(Logo)`
     width: 9em;
+    margin: auto;
     @media (max-width: 768px) {
+        position: ${({ isOpen }) => (isOpen ? "absolute" : "")};
+        align-self: ${({ isOpen }) => (isOpen ? "center" : "")};
         
-        margin: auto;
-
-      
+   
   }
 `
 const StyledLink = styled(props => <Link {...props} />)`
@@ -154,10 +140,15 @@ const StyledLink = styled(props => <Link {...props} />)`
     
     
     &:hover {
-    text-decoration: underline;
+    text-decoration: underline; 
 }
-`;
 
+@media (max-width: 768px) {
+    background-color: ${({ isOpen }) => (isOpen ? "white" : "none")};
+    padding: 2rem;
+    border-bottom: grey solid 1px;
+    }
+`
 
 const StyledUser = styled.a`
     width: 1.2em;
@@ -166,6 +157,7 @@ const StyledUser = styled.a`
     &:hover {
     fill: rgb(92, 92, 92);
     }
+
 `
 const StyledHelp = styled.a`
     width: 1.5em;
