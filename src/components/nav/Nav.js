@@ -15,11 +15,13 @@ const Nav = () => {
     return (
 
         <NavDesktopWrapper isOpen={isOpen}>
-            <Hamburger onClick={() => setIsOpen(!isOpen)} isOpen={isOpen}>
+        <HamburgerWrapper onClick={() => setIsOpen(!isOpen)} isOpen={isOpen} >
+            <Hamburger isOpen={isOpen}>
                 <top />
                 <middle />
                 <bottom />
             </Hamburger>
+        </HamburgerWrapper>
             <NavDesktopListLeft isOpen={isOpen}>
                 <StyledLink to="" isOpen={isOpen}>MEN</StyledLink>
                 <StyledLink to="" isOpen={isOpen}>WOMAN</StyledLink>
@@ -40,30 +42,47 @@ const Nav = () => {
 
 export default Nav;
 
+const HamburgerWrapper = styled.div`
+    display: none;
+    align-items: center;
+    padding: 0;
+    width: 3em;
+    height: 3em;
+    cursor: pointer;
+    background-color: blue;
+    @media (max-width: 768px) {
+        display: flex;
+        margin-top: ${({ isOpen }) => (isOpen ? "1em" : "")};
+
+        
+    }
+`
+
 const Hamburger = styled.div`
-position: ${({ isOpen }) => (isOpen ? "block" : "absolute")};
+    position: ${({ isOpen }) => (isOpen ? "block" : "flex")};
+    display: flex;
   left: 0;
-  display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-around;
   width: 2rem;
   height: 2rem;
-  background: transparent;
   border: none;
-  cursor: pointer;
-  padding: 0 0 0 2rem;
+  /* padding: 0 0 0 2rem; */
   z-index: 10;
   
   @media (max-width: 768px) {
-  
+    
   top, middle, bottom {
     background: black;
     width: 2rem;
     height: 0.25rem;
     border-radius: 10px;
     transition: all 0.3s linear;
-    position: relative;
+    /* position: relative; */
+    
     transform-origin: 4px;
+   
     }
   }
 
@@ -73,6 +92,7 @@ position: ${({ isOpen }) => (isOpen ? "block" : "absolute")};
   }
 
   top {
+    
     transform: ${({ isOpen }) => (isOpen ? 'rotate(45deg)' : 'rotate(0)')};
   }
 
@@ -127,6 +147,8 @@ const StyledLogo = styled(Logo)`
     @media (max-width: 768px) {
         position: ${({ isOpen }) => (isOpen ? "absolute" : "")};
         align-self: ${({ isOpen }) => (isOpen ? "center" : "")};
+        height: ${({ isOpen }) => (isOpen ? "5em" : "")};
+        right: ${({ isOpen }) => (isOpen ? "0em" : "0")};
         
    
   }
