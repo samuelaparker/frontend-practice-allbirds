@@ -4,6 +4,7 @@ import styled from "styled-components"
 import Nav from "../components/nav"
 import GlobalStyle from "../assets/GlobalStyles"
 import GlobalFonts from "../assets/fonts/fonts";
+import Grid from "../components/grid/Grid"
 
 
 
@@ -15,6 +16,7 @@ const IndexPage = () =>{
       <GlobalStyle />
       <GlobalFonts />
       <Nav />
+      <Grid/>
      </React.Fragment>
     )
   

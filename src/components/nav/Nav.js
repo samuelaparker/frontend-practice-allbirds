@@ -49,12 +49,9 @@ const HamburgerWrapper = styled.div`
     width: 3em;
     height: 3em;
     cursor: pointer;
-    background-color: blue;
     @media (max-width: 768px) {
         display: flex;
         margin-top: ${({ isOpen }) => (isOpen ? "1em" : "")};
-
-        
     }
 `
 
@@ -68,7 +65,6 @@ const Hamburger = styled.div`
   width: 2rem;
   height: 2rem;
   border: none;
-  /* padding: 0 0 0 2rem; */
   z-index: 10;
   
   @media (max-width: 768px) {
@@ -79,8 +75,6 @@ const Hamburger = styled.div`
     height: 0.25rem;
     border-radius: 10px;
     transition: all 0.3s linear;
-    /* position: relative; */
-    
     transform-origin: 4px;
    
     }
