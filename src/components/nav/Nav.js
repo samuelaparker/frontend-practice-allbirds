@@ -15,16 +15,12 @@ const Nav = () => {
     return (
 
         <NavDesktopWrapper isOpen={isOpen}>
-            
-            {/* <Icon onClick={() => setIsOpen(!isOpen)} isOpen={isOpen} />
-            <IconMiddle />
-            <IconBottom /> */}
-            <Hamburger isOpen={isOpen}>
-                <span />
-                <span />
-                <span />
+            <Hamburger onClick={() => setIsOpen(!isOpen)} isOpen={isOpen}>
+                <top />
+                <middle />
+                <bottom />
             </Hamburger>
-        
+
             <NavDesktopListLeft isOpen={isOpen}>
                 <StyledLink to="" >MEN</StyledLink>
                 <StyledLink to="">WOMAN</StyledLink>
@@ -46,105 +42,74 @@ const Nav = () => {
 export default Nav;
 
 const Hamburger = styled.div`
-  display: none;
+
+    
+position: ${({ isOpen }) => (isOpen ? "block" : "absolute")};
+  
+  left: 2rem;
+  display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
   cursor: pointer;
+  padding: 0;
+  z-index: 10;
   
-  span {
-    height: 3px;
-    width: 30px;
-    background: black;
-    margin-bottom: 4px;
-    margin-top: 4px;
-    border-radius: 5px;
-  }
   @media (max-width: 768px) {
-    display: flex;
-  }
-`;
+    
+    /* display: flex; */
 
-// const Icon = styled.span`
-//     display: none;
-// @media (max-width: 768px) {
-//         display: flex;
-//   }
-//   position: relative;
-//   background-color: ${(isOpen) => (isOpen ? "transparent" : "black")};
-//   width: 3em;
-//   height: 5px;
-//   margin-top: 3.5em;
-//   &::before,
-//   &::after {
-//     content: "";
-//     background-color: black;
-//     width: 2em;
-//     height: 2px;
-//     position: absolute;
-//     left: 0;
-//   }
-//   &::before {
-//     top: -0.3em;
-//   }
-//   &::after {
-//     top: 0.3em;
-//   }
-//   &::before {
-//     top: ${(props) => (props.isOpen ? "0" : "-0.3rem")};
-//     transform: ${(props) => (props.isOpen ? "rotate(135deg)" : "rotate(0)")};
-//   }
-//   &::after {
-//     top: ${(props) => (props.isOpen ? "0" : "0.3rem")};
-//     transform: ${(props) => (props.isOpen ? "rotate(-135deg)" : "rotate(0)")};
-//   }
   
-// `;
+  top, middle, bottom {
+    background: black;
+    width: 2rem;
+    height: 0.25rem;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 4px;
+    
+  }
+  }
 
-// const Menu = styled.div`
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   position: relative;
-//   @media (max-width: 768px) {
-//     overflow: hidden;
-//     flex-direction: column;
-//     max-height: ${({ isOpen }) => (isOpen ? "300px" : "0")};
-//     transition: max-height 0.3s ease-in;
-//     width: 100%;
-//   }
-// `;
+  middle {
+    display: ${({ isOpen }) => (isOpen ? "none" : "")};
+    transform: ${({ isOpen }) => (isOpen ? 'translateX(20px)' : 'translateX(0)')};
+  }
 
+  top {
+    transform: ${({ isOpen }) => (isOpen ? 'rotate(45deg)' : 'rotate(0)')};
+  
+  }
 
-// const Icon = styled.div`
-//     display: none;
-//     margin-top: .3em;
-//     width: 3em;
-//     height: 4px;
-//     background-color: black;
-//     @media (max-width: 768px) {
-//         display: flex;;
-//     }
-// `
-// const IconMiddle = styled(Icon)`
-//     /* margin-top: 0.3em; */
-// `
-// const IconBottom = styled(Icon)`
-//     /* margin-top: 0.3em; */
-// `
+  bottom {
+   
+    transform: ${({ isOpen }) => (isOpen ? 'rotate(-45deg)' : 'rotate(0)')};
+  }
+
+  
+`;
 
 const NavDesktopWrapper = styled.div`
     display: flex;
     justify-content: space-between;
+
     padding: 0.5rem 1rem;
     min-height: 5em;
     box-shadow: rgb(0 0 0 / 9%) 0px 2px 24px 0px;
+    
 
     @media (max-width: 768px) {
     overflow: hidden;
-    flex-direction: row;
-    align-items: center;
-    min-height: ${({ isOpen }) => (isOpen ? '20em' : "0")};
     transition: max-height 0.3s ease-in;
     width: 100%;
+    flex-direction: ${({ isOpen }) => (isOpen ? "column" : "none")};
+    /* height: ${({ isOpen }) => (isOpen ? "100vh" : "")}; */
+    align-items: ${({ isOpen }) => (isOpen ? "right" : "center")};
+    
   }
 `
 const NavDesktopListLeft = styled.div`
@@ -152,7 +117,10 @@ const NavDesktopListLeft = styled.div`
     justify-content: flex-end;
     align-items: center;
     @media (max-width: 768px) {
-        display: none;
+        flex-direction: ${({ isOpen }) => (isOpen ? "column" : "none")};
+        display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
+        align-items: ${({ isOpen }) => (isOpen ? "stretch" : "center")};
+        
   }
 `
 const NavDesktopListRight = styled.div`
@@ -160,14 +128,21 @@ const NavDesktopListRight = styled.div`
     justify-content: flex-start;
     align-items: center;
     @media (max-width: 768px) {
-        display: none;
+        flex-direction: ${({ isOpen }) => (isOpen ? "column" : "none")};
+        display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
+        align-items: ${({ isOpen }) => (isOpen ? "stretch" : "center")};
+              
+
 }
 `
 
 const StyledLogo = styled(Logo)`
     width: 9em;
     @media (max-width: 768px) {
+        
         margin: auto;
+
+      
   }
 `
 const StyledLink = styled(props => <Link {...props} />)`
