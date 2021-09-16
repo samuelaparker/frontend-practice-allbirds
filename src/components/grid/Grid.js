@@ -7,8 +7,6 @@ import img4 from '../../assets/img/Men_s_Tree_Runners_-_Charcoal__Charcoal_Sole_
 import img5 from '../../assets/img/Men_s_Tree_Runners_-_Charcoal__Charcoal_Sole__-_imageSole.webp'
 import img6 from '../../assets/img/Men_s_Tree_Runners_-_Charcoal__Charcoal_Sole__-_imageTop.webp'
 
-
-
 function Grid({ gridColumns }) {
 
   let gridItems = [
@@ -45,57 +43,77 @@ function Grid({ gridColumns }) {
   ]
 
   return (
+  
     <StyledGrid gridColumns={gridColumns}>
       {
         gridItems.map((item, index) => {
-          return <TestDiv key={item.id}>
-            <div>
-              <img src={item.img} alt={item.title} />
-            </div>
-          </TestDiv>
+          return <StyledGridItem key={item.id} backGroundImg={item.img}>
+  
+          </StyledGridItem>
         }
         )}
 
     </StyledGrid>
+    
   )
 
 }
 
 export default Grid;
 
-const StyledWrapper = styled.div`
-  max-width: 1600px;
-  margin: 0;
-  padding: 0;
-`
+
 
 const StyledGrid = styled.div`
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  
-  width: 100%;
-
-`
-
-const TestDiv = styled.div`
-margin: 0;
-  /* flex: 1 0 25%; 
-  margin: 5px;
-  height: 100px;
-  background-color: blue; */
-  width: 32%;
-  height: 400px;
-  box-sizing: border-box;
-  background-color: transparent; 
-  margin: 5px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
   @media (max-width: 768px) {
-    box-sizing: border-box;
-      margin: 0px;
-      padding: 0;
-      width: 100%;
+    grid-template-columns: repeat(1, 1fr);
   }
+`
+
+const StyledGridItem = styled.div`
+position: relative;
+  margin: 0;
+  padding-top: 100%; /* 1:1 Aspect Ratio !!!!!!!!!!!! */
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  background-image: url(${props => props.backGroundImg});
+  background-size: contain;
+  background-repeat: no-repeat;
+  
+
 
 `
+
+
+
+
+
+
+// const StyledGrid = styled.div`
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   align-items: stretch;
+//   flex-wrap: wrap;
+//   margin: 0 1em 0 1em;
+// `
+
+// const StyledGridItem = styled.div`
+//   margin: 0;
+//   width: 40%;
+//   height: 31em;
+//   margin: 0.1em 0.5em 0.1em 0.5em;
+//   background-image: url(${props => props.backGroundImg});
+//   background-size: contain;
+//   background-repeat: no-repeat;
+  
+//   @media (max-width: 768px) {
+//     box-sizing: border-box;
+//     margin: 1.313em 0 1.313em 0;
+//       width: 100%;
+//   }
+
+// `

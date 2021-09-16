@@ -16,7 +16,9 @@ const IndexPage = () =>{
       <GlobalStyle />
       <GlobalFonts />
       <Nav />
+      <Container>
       <Grid/>
+      </Container>
      </React.Fragment>
     )
   
@@ -24,3 +26,8 @@ const IndexPage = () =>{
 
 export default IndexPage
 
+const Container = styled.div`
+  max-width: 1600px;
+  margin: auto;
+  padding: 0 6em 0 6em;
+`
