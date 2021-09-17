@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby'
 import { useState } from 'react';
-import Logo from '../../assets/allbirdsLogo.inline.svg'
-import User from '../../assets/user.inline.svg'
-import Help from '../../assets/help.inline.svg'
-import Cart from '../../assets/cart.inline.svg'
+import Logo from '../../assets/svg/allbirdsLogo.inline.svg'
+import User from '../../assets/svg/user.inline.svg'
+import Help from '../../assets/svg/help.inline.svg'
+import Cart from '../../assets/svg/cart.inline.svg'
 import styled from 'styled-components'
 
 
