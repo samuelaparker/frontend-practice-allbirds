@@ -7,7 +7,7 @@ import img4 from '../../assets/img/Men_s_Tree_Runners_-_Charcoal__Charcoal_Sole_
 import img5 from '../../assets/img/Men_s_Tree_Runners_-_Charcoal__Charcoal_Sole__-_imageSole.webp'
 import img6 from '../../assets/img/Men_s_Tree_Runners_-_Charcoal__Charcoal_Sole__-_imageTop.webp'
 
-function Grid({ gridColumns }) {
+function Grid() {
 
   let gridItems = [
     {
@@ -44,17 +44,24 @@ function Grid({ gridColumns }) {
 
   return (
   
-    <StyledGrid gridColumns={gridColumns}>
-      {
-        gridItems.map((item, index) => {
-          return <StyledGridItem key={item.id} backGroundImg={item.img}>
-  
-          </StyledGridItem>
-        }
-        )}
-
-    </StyledGrid>
-    
+    <StyledFlexWrapper>
+      <StyledGridSectionLarge>
+        <StyledFlexImagesWrapper>
+          {gridItems.map(item => (
+            <StyledGridItem>
+            <StyledImage src={item.img} alt={item.title} key={item.id} />
+            </StyledGridItem>
+          ))}
+        </StyledFlexImagesWrapper>
+      </StyledGridSectionLarge>
+      <StyledGridSectionSmall>
+        <div>
+          <h1>
+            Product Title
+          </h1>
+        </div>
+      </StyledGridSectionSmall>
+    </StyledFlexWrapper>
   )
 
 }
@@ -63,57 +70,57 @@ export default Grid;
 
 
 
-const StyledGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+const StyledFlexWrapper = styled.div`
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+    margin: 0px auto;
+
   @media (max-width: 768px) {
-    grid-template-columns: repeat(1, 1fr);
+    
+  }
+`
+const StyledGridSectionLarge = styled.div`
+  /* position: relative; */
+  width: 66.6667%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+`
+const StyledGridSectionSmall = styled.div`
+  /* position: relative; */
+  width: 33.3333%;
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `
 
-const StyledGridItem = styled.div`
-position: relative;
-  margin: 0;
-  padding-top: 100%; /* 1:1 Aspect Ratio !!!!!!!!!!!! */
+const StyledFlexImagesWrapper = styled.div`
+  display: flex;
+  margin: 0px auto;
+  flex-flow: row wrap;
   width: 100%;
-  max-width: 100%;
-  height: 100%;
-  background-image: url(${props => props.backGroundImg});
-  background-size: contain;
-  background-repeat: no-repeat;
+ 
   
+`
 
+const StyledGridItem = styled.div`
+  width: 50%;
+  padding: 10px;
+  display: block;
+  margin: 0px auto;
+  @media (max-width: 768px) {
+    
+    width: 100%;
+  }
 
 `
 
 
+const StyledImage = styled.img`
+  max-width: 100%;
+  min-width: 100%;
+`
 
-
-
-
-// const StyledGrid = styled.div`
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: center;
-//   align-items: stretch;
-//   flex-wrap: wrap;
-//   margin: 0 1em 0 1em;
-// `
-
-// const StyledGridItem = styled.div`
-//   margin: 0;
-//   width: 40%;
-//   height: 31em;
-//   margin: 0.1em 0.5em 0.1em 0.5em;
-//   background-image: url(${props => props.backGroundImg});
-//   background-size: contain;
-//   background-repeat: no-repeat;
-  
-//   @media (max-width: 768px) {
-//     box-sizing: border-box;
-//     margin: 1.313em 0 1.313em 0;
-//       width: 100%;
-//   }
-
-// `
+// background-image: url(${props => props.backGroundImg});
