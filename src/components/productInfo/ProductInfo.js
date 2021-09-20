@@ -5,6 +5,7 @@ import StarFull from '../../assets/svg/starFull.inline.svg'
 import StarHalf from '../../assets/svg/starHalf.inline.svg'
 import AfterpayLogo from '../../assets/img/afterpayLogo.png'
 import { ColorSwatchMistWhiteSole, NavyNightWhiteSole, JetBlackWhiteSole, JetBlackBlackSole, KaikuraWhiteWhiteSole, CharcoalCharcoalSole, ChalkWhiteSole, ChomonixDarkGreySole, HarvestWhiteSole, BoughTaupeSole, BlueRidgeWhiteSole, HeatheredBlackSunnyGoldSole, SolWhiteSole, LilacWhiteSole } from './colorSwatches'
+import SizeSelector from '../sizeSelector'
 
 
 
@@ -27,18 +28,24 @@ export default function ProductInfo({ productItems }) {
 
         <div><StyledStarFull /><StyledStarFull /><StyledStarFull /><StyledStarFull /><StarHalf /> <StyledReviewLink to={``}>(1963)</StyledReviewLink></div>
 
-        <p>CLASSICS:</p><ColorSwatchMistWhiteSole /><NavyNightWhiteSole /><JetBlackWhiteSole /><JetBlackBlackSole /><KaikuraWhiteWhiteSole />
+        <p>CLASSICS:</p><StyledSwatchWrapper><ColorSwatchMistWhiteSole /><NavyNightWhiteSole /><JetBlackWhiteSole /><JetBlackBlackSole /><KaikuraWhiteWhiteSole /></StyledSwatchWrapper>
         <p>LIMITED EDITION:</p><CharcoalCharcoalSole /><ChalkWhiteSole /><ChomonixDarkGreySole /><HarvestWhiteSole /><BoughTaupeSole /><BlueRidgeWhiteSole /><HeatheredBlackSunnyGoldSole />
         <div><SolWhiteSole /><LilacWhiteSole /></div>
 
         <div><p>Also available in <UnderLinedLink to={''}>Women's Sizes</UnderLinedLink></p></div>
 
-        
+        <SizeSelector />
+
+        <div><p>This style is available in whole sizes only. In between sizes? We recommend you size down. <UnderLinedLink to={''}>See Size Chart</UnderLinedLink></p></div>
 
         </div>
     );
 
 };
+
+const StyledSwatchWrapper = styled.div`
+        margin: 0, 5px
+`
 
 const StyledLink = styled(props => <Link {...props} />)`
     text-decoration: none;
@@ -46,7 +53,7 @@ const StyledLink = styled(props => <Link {...props} />)`
     font-family: 'Hurme Geometric Sans';
     font-weight: bold;
     font-size: 11px;
-    
+    margin: 5px 0;
     
     &:hover {
     text-decoration: underline; 
@@ -57,7 +64,6 @@ const UnderLinedLink = styled(StyledLink)`
     font-family: 'Hurme Geometric Sans Bold';
     
 `
-
 
 const StyledAfterpayLogo = styled.img`
     height: 12px;

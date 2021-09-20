@@ -5,7 +5,7 @@ import styled from 'styled-components'
 export const ColorSwatchMistWhiteSole = styled.div`
     width: 40px;
     height: 40px;
-    margin: 0px auto;
+    margin-right: 8px;
     border-radius: 50%;
     background: linear-gradient(
 140deg, rgb(136, 134, 136) 50%, rgb(255, 255, 255) 50%);
@@ -17,7 +17,7 @@ export const ColorSwatchMistWhiteSole = styled.div`
 export const NavyNightWhiteSole = styled.div`
     width: 40px;
     height: 40px;
-    margin: 0px auto;
+    margin-right: 8px;
     border-radius: 50%;
     background: linear-gradient(
 140deg, rgb(44, 51, 62) 50%, rgb(255, 255, 250) 50%);
@@ -28,7 +28,7 @@ export const NavyNightWhiteSole = styled.div`
 export const JetBlackWhiteSole = styled.div`
     width: 40px;
     height: 40px;
-    margin: 0px auto;
+    margin-right: 8px;
     border-radius: 50%;
     background: linear-gradient(
 140deg, rgb(35, 31, 32) 50%, rgb(255, 254, 249) 50%);
@@ -39,7 +39,7 @@ export const JetBlackWhiteSole = styled.div`
 export const JetBlackBlackSole = styled.div`
         width: 40px;
     height: 40px;
-    margin: 0px auto;
+    margin-right: 8px;
     border-radius: 50%;
     background: linear-gradient(
 140deg, rgb(35, 31, 32) 50%, rgb(92, 93, 96) 50%);
@@ -50,7 +50,7 @@ export const JetBlackBlackSole = styled.div`
 export const KaikuraWhiteWhiteSole = styled.div`
     width: 40px;
     height: 40px;
-    margin: 0px auto;
+    margin-right: 8px;
     border-radius: 50%;
     background: linear-gradient(
     140deg, rgb(228, 229, 230) 50%, rgb(255, 254, 249) 50%);
@@ -61,7 +61,7 @@ export const KaikuraWhiteWhiteSole = styled.div`
 export const CharcoalCharcoalSole = styled.div`
     width: 40px;
     height: 40px;
-    margin: 0px auto;
+    margin-right: 8px;
     border-radius: 50%;
     background: rgb(76, 67, 65);
     position: relative;
@@ -71,7 +71,7 @@ export const CharcoalCharcoalSole = styled.div`
 export const ChalkWhiteSole = styled.div`
     width: 40px;
     height: 40px;
-    margin: 0px auto;
+    margin-right: 8px;
     border-radius: 50%;
     background: rgb(224, 224, 224);
     position: relative;
@@ -81,7 +81,7 @@ export const ChalkWhiteSole = styled.div`
 export const ChomonixDarkGreySole = styled.div`
         width: 40px;
     height: 40px;
-    margin: 0px auto;
+    margin-right: 8px;
     border-radius: 50%;
     background: linear-gradient(
     140deg, rgb(71, 70, 64) 50%, rgb(54, 54, 56) 50%);
@@ -92,7 +92,7 @@ export const ChomonixDarkGreySole = styled.div`
 export const HarvestWhiteSole = styled.div`
     width: 40px;
     height: 40px;
-    margin: 0px auto;
+    margin-right: 8px;
     border-radius: 50%;
     background: linear-gradient(
     140deg, rgb(154, 113, 110) 50%, rgb(255, 254, 249) 50%);
@@ -104,7 +104,7 @@ export const BoughTaupeSole = styled.div`
 
 width: 40px;
     height: 40px;
-    margin: 0px auto;
+    margin-right: 8px;
     border-radius: 50%;
     background: linear-gradient(
 140deg, rgb(189, 172, 163) 50%, rgb(148, 141, 131) 50%);
@@ -115,7 +115,7 @@ width: 40px;
 export const BlueRidgeWhiteSole = styled.div`
     width: 40px;
     height: 40px;
-    margin: 0px auto;
+    margin-right: 8px;
     border-radius: 50%;
     background: linear-gradient(
 140deg, rgb(35, 38, 100) 50%, rgb(255, 255, 250) 50%);
@@ -127,7 +127,7 @@ export const HeatheredBlackSunnyGoldSole = styled.div`
 
 width: 40px;
     height: 40px;
-    margin: 0px auto;
+    margin-right: 8px;
     border-radius: 50%;
     background: linear-gradient(
 140deg, rgb(54, 51, 60) 50%, rgb(236, 204, 49) 50%);
@@ -139,7 +139,7 @@ export const SolWhiteSole = styled.div`
 
 width: 40px;
     height: 40px;
-    margin: 0px auto;
+    margin-right: 8px;
     border-radius: 50%;
     background: linear-gradient(
 140deg, rgb(249, 167, 77) 50%, rgb(255, 255, 250) 50%);
@@ -151,7 +151,7 @@ export const LilacWhiteSole = styled.div`
 
         width: 40px;
     height: 40px;
-    margin: 0px auto;
+    margin-right: 8px;
     border-radius: 50%;
     background: linear-gradient(
 140deg, rgb(222, 208, 222) 50%, rgb(255, 255, 250) 50%);
