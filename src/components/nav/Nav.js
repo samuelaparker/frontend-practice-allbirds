@@ -45,7 +45,45 @@ const Nav = () => {
 
 export default Nav;
 
+const NavDesktopWrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
 
+    padding: 0 0 0 2rem;
+    min-height: 5em;
+    box-shadow: rgb(0 0 0 / 9%) 0px 2px 24px 0px;
+    
+    @media (max-width:920px) {
+    overflow: hidden;
+    transition: max-height 0.3s ease-in;
+    width: 100%;
+    flex-direction: ${({ isOpen }) => (isOpen ? "column" : "none")};
+    align-items: ${({ isOpen }) => (isOpen ? "right" : "center")};
+    
+  }
+`
+const NavDesktopListLeft = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    @media (max-width: 920px) {
+        flex-direction: ${({ isOpen }) => (isOpen ? "column" : "none")};
+        display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
+        align-items: ${({ isOpen }) => (isOpen ? "stretch" : "center")};
+        
+  }
+`
+const NavDesktopListRight = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    @media (max-width: 920px) {
+        flex-direction: ${({ isOpen }) => (isOpen ? "column" : "none")};
+        display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
+        align-items: ${({ isOpen }) => (isOpen ? "stretch" : "center")};
+              
+}
+`
 
 
 const HamburgerWrapper = styled.div`
@@ -55,7 +93,7 @@ const HamburgerWrapper = styled.div`
     width: 3em;
     height: 3em;
     cursor: pointer;
-    @media (max-width: 768px) {
+    @media (max-width: 920px) {
         display: flex;
         margin-top: ${({ isOpen }) => (isOpen ? "1em" : "")};
     }
@@ -73,7 +111,7 @@ const Hamburger = styled.div`
   border: none;
   z-index: 10;
   
-  @media (max-width: 768px) {
+  @media (max-width: 920px) {
     
   top, middle, bottom {
     background: black;
@@ -101,56 +139,23 @@ const Hamburger = styled.div`
   }
 `;
 
-const NavDesktopWrapper = styled.div`
-    display: flex;
-    justify-content: space-between;
 
-    padding: 0 0 0 2rem;
-    min-height: 5em;
-    box-shadow: rgb(0 0 0 / 9%) 0px 2px 24px 0px;
-    
-    @media (max-width: 768px) {
-    overflow: hidden;
-    transition: max-height 0.3s ease-in;
-    width: 100%;
-    flex-direction: ${({ isOpen }) => (isOpen ? "column" : "none")};
-    align-items: ${({ isOpen }) => (isOpen ? "right" : "center")};
-    
-  }
-`
-const NavDesktopListLeft = styled.div`
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    @media (max-width: 768px) {
-        flex-direction: ${({ isOpen }) => (isOpen ? "column" : "none")};
-        display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
-        align-items: ${({ isOpen }) => (isOpen ? "stretch" : "center")};
-        
-  }
-`
-const NavDesktopListRight = styled.div`
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    @media (max-width: 768px) {
-        flex-direction: ${({ isOpen }) => (isOpen ? "column" : "none")};
-        display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
-        align-items: ${({ isOpen }) => (isOpen ? "stretch" : "center")};
-              
-}
-`
 
 const StyledLogo = styled(Logo)`
-    width: 9em;
-    margin: auto;
-    @media (max-width: 768px) {
-        position: ${({ isOpen }) => (isOpen ? "absolute" : "")};
-        align-self: ${({ isOpen }) => (isOpen ? "center" : "")};
-        height: ${({ isOpen }) => (isOpen ? "5em" : "")};
-        right: ${({ isOpen }) => (isOpen ? "0em" : "0")};
+        width: 9em;
+        margin: auto;
+        margin-top: 1em;
+        position: absolute;
         left: 0; 
         right: 0; 
+       
+
+    @media (max-width: 920px) {
+     
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: ${({ isOpen }) => (isOpen ? "1em" : "0")};
     
   }
 `
@@ -166,7 +171,7 @@ const StyledLink = styled(props => <Link {...props} />)`
     text-decoration: underline; 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 920px) {
     background-color: ${({ isOpen }) => (isOpen ? "white" : "none")};
     padding: 2rem;
     border-bottom: grey solid 1px;

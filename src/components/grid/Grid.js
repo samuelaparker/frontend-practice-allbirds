@@ -40,7 +40,7 @@ const StyledFlexWrapper = styled.div`
   }
 `
 const StyledGridSectionLarge = styled.div`
-  /* position: relative; */
+
   width: 66.6667%;
   @media (max-width: 768px) {
     width: 100%;
@@ -48,7 +48,7 @@ const StyledGridSectionLarge = styled.div`
 
 `
 const StyledGridSectionSmall = styled.div`
-  /* position: relative; */
+  
   width: 33.3333%;
   @media (max-width: 768px) {
     width: 100%;
@@ -76,10 +76,7 @@ const StyledGridItem = styled.div`
 
 `
 
-
 const StyledImage = styled.img`
   max-width: 100%;
   min-width: 100%;
 `
-
-// background-image: url(${props => props.backGroundImg});
