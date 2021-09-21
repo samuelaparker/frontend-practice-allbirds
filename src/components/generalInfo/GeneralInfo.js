@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react"
+import React, { Fragment, } from "react"
 import styled from 'styled-components';
 import { useId } from "react-id-generator";
 
@@ -6,24 +6,7 @@ import { useId } from "react-id-generator";
 
 const GeneralInfo = ({ generalInfo }) => {
 
-    let [toggle, setToggle] = useState(false);
-
-    const toggleGeneralInfo = () => {
-        for (let n of generalInfo) {
-            if (!toggle) {
-              setToggle(true) 
-            } else {
-                setToggle(false) 
-            }
-          }
-    }
-
-    useEffect(() => {
-        toggleGeneralInfo()
-
-    }, [])
-
-
+    
 
     const [htmlId] = useId();
 
@@ -33,7 +16,7 @@ const GeneralInfo = ({ generalInfo }) => {
           <div>
               {generalInfo.map(item => (
                   <Fragment key={htmlId}>
-                  <ProductInfoItem key={htmlId}>
+                  <ProductInfoItem key={htmlId} directionToggle={item.toggle}>
                <LgColumn>
                    <div>
                        <StyledImage src={item.image} alt={item.heading}></StyledImage>
@@ -65,21 +48,38 @@ export default GeneralInfo;
 const ProductInfoItem = styled.div`
     display: flex;
     align-content: center;
+    margin-top: 10em;
     /* flex-direction: row-reverse; */
+    flex-direction: ${({ directionToggle }) => (directionToggle ? "row-reverse" : "")};
+    @media (max-width: 768px) {
+        flex-wrap: wrap;
+        
+    }
 `
 
 
 const LgColumn = styled.div`
     width: 58.33333%;
     padding: 0 23px;
+        @media (max-width: 768px) {
+        width: 100%;
+    }
 `
 const SmColumn = styled.div`
     width: 41.66667%;
+        @media (max-width: 768px) {
+            width: 100%;
+    }
 `
 const TextWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: left;
+    @media (max-width: 768px) {
+        margin-left: 2em;
+        text-align: left;
+        
+    }
 `
 
 const StyledImage = styled.img`

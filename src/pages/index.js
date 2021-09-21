@@ -36,6 +36,7 @@ let generalInfo = [
     image: generalInfoImage1,
     linkTitle: '',
     linkSrc: '',
+    toggle: false,
   },
   {
     heading: 'SUGARCANE MIDSOLE',
@@ -44,6 +45,7 @@ let generalInfo = [
     image: generalInfoImage2,
     linkTitle: '',
     linkSrc: '',
+    toggle: true,
   },
   {
     heading: 'CASTOR BEAN INSOLE',
@@ -52,6 +54,7 @@ let generalInfo = [
     image: generalInfoImage3,
     linkTitle: '',
     linkSrc: '',
+    toggle: false,
   },
   {
     heading: 'RECYCLED LACES',
@@ -60,6 +63,7 @@ let generalInfo = [
     image: generalInfoImage4,
     linkTitle: '',
     linkSrc: '',
+    toggle: true,
   },
   {
     heading: 'Tread Lighter',
@@ -67,7 +71,8 @@ let generalInfo = [
     description: 'Our Tree Runner is carbon neutral thanks to sustainable practices, like using natural materials and buying offsets. But before we balance the emissions, its footprint starts at 9.6 kg CO2e. Think of this measurement like a nutrition label for your closet.',
     image: generalInfoImage5,
     linkTitle: 'Dig Into How We’re Measuring CO2e',  
-    linkSrc: 'https://www.allbirds.com/pages/footprint'
+    linkSrc: 'https://www.allbirds.com/pages/footprint',
+    toggle: false,
   },
 ]
 
