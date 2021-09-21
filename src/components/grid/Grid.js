@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ProductInfo from '../ProductInfo';
+import ProductInfo from '../productInfo';
 
 
 function Grid({ productItems}) {
