@@ -38,9 +38,15 @@ const Nav = () => {
         </NavDesktopWrapper>
 
     )
+
+
+    
 }
 
 export default Nav;
+
+
+
 
 const HamburgerWrapper = styled.div`
     display: none;
@@ -143,8 +149,9 @@ const StyledLogo = styled(Logo)`
         align-self: ${({ isOpen }) => (isOpen ? "center" : "")};
         height: ${({ isOpen }) => (isOpen ? "5em" : "")};
         right: ${({ isOpen }) => (isOpen ? "0em" : "0")};
-        
-   
+        left: 0; 
+        right: 0; 
+    
   }
 `
 const StyledLink = styled(props => <Link {...props} />)`

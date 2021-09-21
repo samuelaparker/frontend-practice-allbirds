@@ -16,7 +16,7 @@ export default function ProductInfo({ productItems }) {
 // console.log(productItems.title)
 
     return(
-        <div>
+        <ProductInfoWrapper>
             <StyledLink to={``}>Home /</StyledLink>
             <StyledLink to={``}> Men's Shoes /</StyledLink>
             <StyledLink to={``}> Everyday Sneakers /</StyledLink>
@@ -38,10 +38,14 @@ export default function ProductInfo({ productItems }) {
 
         <div><p>This style is available in whole sizes only. In between sizes? We recommend you size down. <UnderLinedLink to={''}>See Size Chart</UnderLinedLink></p></div>
 
-        </div>
+        </ProductInfoWrapper>
     );
 
 };
+
+const ProductInfoWrapper = styled.div`
+    margin-left: 2em;
+`
 
 const StyledSwatchWrapper = styled.div`
         margin: 0, 5px
