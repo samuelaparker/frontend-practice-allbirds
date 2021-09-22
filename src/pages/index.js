@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React from "react"
 import { Helmet } from "react-helmet"
 import styled from "styled-components"
 import Nav from "../components/nav"
@@ -25,6 +25,14 @@ let productItems = [
     title: 'Men\'s Tree Runners',
     price: 98,
     img: [{imageId: 1, src: img1, title: 'image1'}, {imageId: 2, src: img2, title: 'image2'}, {imageId: 3, src: img3, title: 'image3'}, {imageId: 4, src: img4, title: 'image4'}, {imageId: 5, src: img5, title: 'image5'}, {imageId: 6, src: img6, title: 'image6'}],
+    reviewNumber: 1988,
+    reviewSummary: [
+      {
+        reviewRating: 4,
+        reviewText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        reviewer: 'John Doe',
+      }
+    ]
   },
 ]
 
@@ -77,10 +85,11 @@ let generalInfo = [
 ]
 
 
-
 const IndexPage = () =>{
-
+  console.log(typeof(React.Fragment));
+  
     return (
+      
       <React.Fragment>
       <GlobalStyle />
       <GlobalFonts />
@@ -91,7 +100,7 @@ const IndexPage = () =>{
       </Container>
      </React.Fragment>
     )
-  
+    
 }
 
 export default IndexPage

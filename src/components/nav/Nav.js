@@ -8,7 +8,6 @@ import Cart from '../../assets/svg/cart.inline.svg'
 import styled from 'styled-components'
 
 
-
 const Nav = () => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -70,9 +69,9 @@ const NavDesktopListLeft = styled.div`
         flex-direction: ${({ isOpen }) => (isOpen ? "column" : "none")};
         display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
         align-items: ${({ isOpen }) => (isOpen ? "stretch" : "center")};
-        
   }
 `
+
 const NavDesktopListRight = styled.div`
     display: flex;
     justify-content: flex-start;

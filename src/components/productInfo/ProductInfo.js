@@ -25,6 +25,8 @@ import SizeSelector from "../sizeSelector";
 export default function ProductInfo({ productItems }) {
   // console.log(productItems.title)
 
+  const { reviewNumber } = productItems[0];
+
   return (
     <ProductInfoWrapper>
       <StyledLink to={``}>Home /</StyledLink>
@@ -49,7 +51,7 @@ export default function ProductInfo({ productItems }) {
         <StyledStarFull />
         <StyledStarFull />
         <StyledStarFull />
-        <StarHalf /> <StyledReviewLink to={``}>(1963)</StyledReviewLink>
+        <StarHalf /> <StyledReviewLink to={``}>{reviewNumber}</StyledReviewLink>
       </div>
 
       <p>CLASSICS:</p>
